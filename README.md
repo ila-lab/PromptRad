@@ -1,9 +1,11 @@
 # PromptRad
 
 Prompt-based multi-label classification of liver radiology reports.
-This repository provides **inference code and pre-trained model weights** so that
-you can reproduce the reported results. (The training data is not publicly
-released, so training code is not included.)
+This repository provides **inference code and pre-trained model weights** so that you can reproduce the reported results.
+
+🗓️ Check our BioNLP 2026 paper: https://aclanthology.org/2026.bionlp-1.20/
+
+⚠️ Due to the data release policy of Chang Gung Memorial Hospital, the training data is not publicly released. (Training code is not included in this repo as well.)
 
 Two model variants are available:
 
@@ -91,4 +93,32 @@ Print the per-class / macro / micro F1 averaged over the 5 seeds:
 ```bash
 python src/evaluate.py --test_method promptrad        --test_filename test.pkl
 python src/evaluate.py --test_method promptrad-autot  --test_filename test.pkl
+```
+
+## Reference
+If you use our data or code, please cite our [BioNLP 2026 paper](https://aclanthology.org/2026.bionlp-1.20/):
+```
+@inproceedings{lin-etal-2026-promptrad,
+    title = "{P}rompt{R}ad: Knowledge-Enhanced Multi-Label Prompt-Tuning for Low-Resource Radiology Report Labeling",
+    author = "Lin, Ying-Jia  and
+      Lo, Tzu-Chin  and
+      Li, Ping-Chien  and
+      Cheng, Chi-Tung  and
+      Liao, Chien-Hung  and
+      Kao, Hung-Yu",
+    editor = "Demner-Fushman, Dina  and
+      Ananiadou, Sophia  and
+      Roberts, Kirk  and
+      Tsujii, Junichi",
+    booktitle = "{B}io{NLP} 2026",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.bionlp-1.20/",
+    doi = "10.18653/v1/2026.bionlp-1.20",
+    pages = "235--249",
+    ISBN = "979-8-89176-434-7",
+    abstract = "Automatic report labeling facilitates the identification of clinical findings from unstructured text and enables large-scale annotation for medical imaging research. Existing rule-based labelers struggle with the diverse descriptions in clinical reports, while fine-tuning pre-trained language models (PLMs) requires large amounts of labeled data that are often unavailable in clinical settings. In this paper, we propose PromptRad, a knowledge-enhanced multi-label prompt-tuning approach for radiology report labeling under low-resource settings. PromptRad reformulates multi-label classification as masked language modeling and incorporates synonyms from the UMLS Metathesaurus into a multi-word verbalizer to enrich category representations. By fine-tuning the PLM without additional classification layers, PromptRad requires substantially less labeled data than conventional fine-tuning. Experiments on liver CT (computed tomography) reports show that PromptRad outperforms dictionary-based and fine-tuning baselines with only 32 labeled training examples, and achieves competitive performance with GPT-4 despite using a much smaller model. Further analysis demonstrates that PromptRad captures complex negation patterns more effectively than existing methods, making it a promising solution for report labeling in data-scarce clinical scenarios. Our code is available at https://github.com/ila-lab/PromptRad."
+}
 ```
