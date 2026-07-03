@@ -1,9 +1,9 @@
 # PromptRad
-
+- 🗓️ Check our BioNLP 2026 paper: https://aclanthology.org/2026.bionlp-1.20/
+- 🖥️ [Click here to download the slide](./bionlp26.pdf) I presented at BioNLP 2026.
+---
 Prompt-based multi-label classification of liver radiology reports.
 This repository provides **inference code and pre-trained model weights** so that you can reproduce the reported results.
-
-🗓️ Check our BioNLP 2026 paper: https://aclanthology.org/2026.bionlp-1.20/
 
 ⚠️ Due to the data release policy of Chang Gung Memorial Hospital, the training data is not publicly released. (Training code is not included in this repo as well.)
 
